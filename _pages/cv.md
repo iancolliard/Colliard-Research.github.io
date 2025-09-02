@@ -56,10 +56,12 @@ Fellowships and Awards
 Conference Presentations
 ======
 Oral Presentations
+------
 * Polyoxometalate ligands reveal different coordination chemistries among lanthanides and heavy actinides – ACS National Meeting, San Francisco, CA (2023)
 * Actinide–Oxide Cluster: Structure and Properties – Actinide Center of Excellence Meeting, Pojoaque, NM (2018)
 * Core-Shell Platinum Coated Nickel Nanowires as Electrochemical Catalysts for Glucose Sensors – Undergraduate Research Symposium, Fordham University, NY (2017)
 Poster Presentations
+------
 * Effects of Metal Ions on Uranium(IV) Sulfate Speciation and Supra-molecular Assembly – FMOCS VI, Corvallis, OR (2019)
 * Synthesis and Characterization of Novel Uranium Sulfate Frameworks: From Simple Dimeric Species to Hetero-Metallic Frameworks – ACS NORM, Portland, OR (2019)
 * Synthesis and Investigation of Tetravalent Uranium Sulfate Speciation – NNSA SSAP Symposium, Albuquerque, NM (2019)
