@@ -12,7 +12,8 @@ redirect_from:
 Education
 ======
 * Ph.D., Materials Chemistry, Oregon State University, Corvallis, OR (2017 – 2022) 
-Advisor: Dr. May Nyman; Dissertation focus: Metal-oxo cluster chemistry of actinides (Th, U) and Ce; synthesis and structural characterization of polyoxometalate complexes.
+	* Advisor: Dr. May Nyman 
+	* Dissertation focus: Metal-oxo cluster chemistry of actinides (Th, U) and Ce; synthesis and structural characterization of polyoxometalate complexes.
 * B.S., Chemistry, Fordham University, Bronx, NY (2014 – 2017)
 
 Research Experience
