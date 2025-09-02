@@ -1,0 +1,11 @@
+PyYAML>=3.01
+latexcodec>=1.0.4
+
+[:python_version < "3.10"]
+importlib_metadata
+
+[doc]
+sphinx
+
+[test]
+pytest

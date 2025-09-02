@@ -25,6 +25,25 @@
 
 import pandas as pd
 
+encodings_to_try = ("utf-8", "utf-8-sig", "cp1252", "latin-1")
+last_err = None
+for enc in encodings_to_try:
+    try:
+        publications = pd.read_csv(
+            "publications.tsv",    # <-- use your TSV
+            sep="\t",
+            header=0,
+            encoding=enc,
+            dtype=str,             # keep everything as string
+            keep_default_na=False  # empty cells stay empty strings, not NaN
+        )
+        print(f"Loaded publications.tsv with encoding: {enc}")
+        break
+    except UnicodeDecodeError as e:
+        last_err = e
+else:
+    raise last_err
+
 
 # ## Import TSV
 # 
@@ -34,7 +53,7 @@ import pandas as pd
 
 # In[3]:
 
-publications = pd.read_csv("publications.csv", sep="\t", header=0)
+publications = pd.read_csv("publications.tsv", sep="\t", header=0)
 publications
 
 
@@ -103,7 +122,6 @@ for row, item in publications.iterrows():
     
     md_filename = os.path.basename(md_filename)
        
-    with open("../_publications/" + md_filename, 'w') as f:
-        f.write(md)
+    with open("../_publications/" + md_filename, "w", encoding="utf-8", newline="\n") as f: f.write(md)
 
 
