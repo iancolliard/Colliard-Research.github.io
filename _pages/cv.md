@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Curiculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -20,25 +20,28 @@ Education
 ======
 * Ph.D., Materials Chemistry, Oregon State University, Corvallis, OR (2017 – 2022) 
 Advisor: Dr. May Nyman; Dissertation focus: Metal-oxo cluster chemistry of actinides (Th, U) and Ce; synthesis and structural characterization of polyoxometalate complexes.
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* B.S., Chemistry, Fordham University, Bronx, NY (2014 – 2017)
 
-Work experience
+Research Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Lawrence Livermore National Laboratory (LLNL) – Postdoctoral Researcher & XRD Facility Manager (2022–Present)
+Advisors: Dr. Gauthier Deblonde & Dr. Tyler Fears
+	* Pioneered micro-scale synthesis of lanthanide and transplutonium polyoxometalate complexes, enabling first structural characterization of curium–POM compounds at the microgram scale (Nature Chemistry, ChemComm).
+	* Developed synthetic strategies to modulate optical and spectroscopic properties of f-element complexes, revealing coordination trends between lanthanides and actinides (JACS Au).
+	* Fabricated multi-component metallic aerogels (Ag, Au) via novel routes, enhancing structural stability and catalytic activity.
+	* Managed and optimized three X-ray diffraction instruments (Rigaku SCXRD, Bruker D8, D2 Phaser) supporting 20+ research groups annually; led safety oversight, user training, and scheduling.
+	* Solved and refined 100+ crystal structures in support of multi-lab, multi-disciplinary projects.
+* Lawrence Livermore National Laboratory – DOE SCGSR and GEM Fellow (Feb–Aug 2021)
+Advisor: Dr. Gauthier Deblonde
+•Designed and implemented synthetic and spectroscopic methods for transplutonium–POM complexes, culminating in the isolation of novel curium coordination compounds (Nature Chemistry)
+* Oregon State University, Corvallis, OR – Graduate Research Assistant (Jan 2018 – March 2022)
+Advisor: Dr. May Nyman
+•Expanded aqueous actinide chemistry (Th, U, Ce) through controlled cation-mediated synthesis, isolating clusters from 1–70 metal centers and advancing understanding of metal–oxo assembly.
+•Synthesized and functionalized tungsten polyoxometalates with organotin ligands to enhance actinide binding and tune solubility.
+•Applied SCXRD, SAXS, and multinuclear NMR to establish structure–property relationships, contributing to 10+ peer-reviewed publications.
+* Fordham University, Bronx, NY – Undergraduate Research Assistant (Jan 2016 – June 2017)
+Advisor: Prof. Christopher Koenigsmann
+•Investigated bi-metallic nanowire synthesis for electrochemical glucose sensing, optimizing core–shell fabrication and electrochemical performance.
   
 Skills
 ======
