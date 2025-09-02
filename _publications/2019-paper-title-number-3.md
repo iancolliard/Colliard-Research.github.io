@@ -2,7 +2,7 @@
 title: "Monomeric and Trimeric Thorium Chlorides Isolated from Acidic Aqueous Solution"
 collection: manuscripts
 permalink: /publication/7/29/2019-paper-title-number-3
-date: 7/29/2019
+date: 2019-07-29
 venue: 'Inorganic Chemistry'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper3.pdf'
 citation: 'https://doi.org/10.1021/acs.inorgchem.9b01238'
