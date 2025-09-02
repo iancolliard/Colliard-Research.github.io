@@ -1,5 +1,5 @@
 layout: archive
-title: "Publications"
+title: ""
 permalink: /publications/
 author_profile: true
 redirect_from:
