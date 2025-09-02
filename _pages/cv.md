@@ -9,13 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Laboratory Skills
-======
-* Synthesis & Handling: Air-sensitive techniques; aqueous & microscale; actinide/lanthanide complexes; metallic aerogels; Polyoxometalate synthesis & functionalization; nanowire synthesis; radioactive material worker (Th, U, Np, Pu, Am, Cm, Cf)
-* Characterization: SCXRD, PXRD, PDF, SAXS; IR, Raman, luminescence spectroscopy; multinuclear NMR (¹H, ¹³C, ³¹P, ¹¹⁹Sn, ¹⁸³W); SEM, AFM, X-ray tomography, etc.
-* Instrumentation & Management: XRD facility management (Rigaku, Bruker); maintenance, service requests, financial oversight; user training, safety compliance, inventory, waste management, scheduling coordinator, 
-* Software & Data Analysis: Crystallographic software (OLEX2, Chrysalis, JANA); data analysis & reporting (Igor, Origin, Excel, Word); Coding (Python); Graphic design (CorelDraw, inkscape).
-
 Education
 ======
 * Ph.D., Materials Chemistry, Oregon State University, Corvallis, OR (2017 – 2022) 
@@ -33,24 +26,46 @@ Advisors: Dr. Gauthier Deblonde & Dr. Tyler Fears
 	* Solved and refined 100+ crystal structures in support of multi-lab, multi-disciplinary projects.
 * Lawrence Livermore National Laboratory – DOE SCGSR and GEM Fellow (Feb–Aug 2021)
 Advisor: Dr. Gauthier Deblonde
-•Designed and implemented synthetic and spectroscopic methods for transplutonium–POM complexes, culminating in the isolation of novel curium coordination compounds (Nature Chemistry)
+	* Designed and implemented synthetic and spectroscopic methods for transplutonium–POM complexes, culminating in the isolation of novel curium coordination compounds (Nature Chemistry)
 * Oregon State University, Corvallis, OR – Graduate Research Assistant (Jan 2018 – March 2022)
 Advisor: Dr. May Nyman
-•Expanded aqueous actinide chemistry (Th, U, Ce) through controlled cation-mediated synthesis, isolating clusters from 1–70 metal centers and advancing understanding of metal–oxo assembly.
-•Synthesized and functionalized tungsten polyoxometalates with organotin ligands to enhance actinide binding and tune solubility.
-•Applied SCXRD, SAXS, and multinuclear NMR to establish structure–property relationships, contributing to 10+ peer-reviewed publications.
+	 * Expanded aqueous actinide chemistry (Th, U, Ce) through controlled cation-mediated synthesis, isolating clusters from 1–70 metal centers and advancing understanding of metal–oxo assembly.
+	* Synthesized and functionalized tungsten polyoxometalates with organotin ligands to enhance actinide binding and tune solubility.
+	* Applied SCXRD, SAXS, and multinuclear NMR to establish structure–property relationships, contributing to 10+ peer-reviewed publications.
 * Fordham University, Bronx, NY – Undergraduate Research Assistant (Jan 2016 – June 2017)
 Advisor: Prof. Christopher Koenigsmann
-•Investigated bi-metallic nanowire synthesis for electrochemical glucose sensing, optimizing core–shell fabrication and electrochemical performance.
-  
-Skills
+	* Investigated bi-metallic nanowire synthesis for electrochemical glucose sensing, optimizing core–shell fabrication and electrochemical performance.
+
+Laboratory Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Synthesis & Handling: Air-sensitive techniques; aqueous & microscale; actinide/lanthanide complexes; metallic aerogels; Polyoxometalate synthesis & functionalization; nanowire synthesis; radioactive material worker (Th, U, Np, Pu, Am, Cm, Cf)
+* Characterization: SCXRD, PXRD, PDF, SAXS; IR, Raman, luminescence spectroscopy; multinuclear NMR (¹H, ¹³C, ³¹P, ¹¹⁹Sn, ¹⁸³W); SEM, AFM, X-ray tomography, etc.
+* Instrumentation & Management: XRD facility management (Rigaku, Bruker); maintenance, service requests, financial oversight; user training, safety compliance, inventory, waste management, scheduling coordinator, 
+* Software & Data Analysis: Crystallographic software (OLEX2, Chrysalis, JANA); data analysis & reporting (Igor, Origin, Excel, Word); Coding (Python); Graphic design (CorelDraw, inkscape).
+  
+Fellowships and Awards
+======
+* Lindau Nobel Laureate Fellowship, LLNL – 2025
+* PLS Directorate Winter Scientific & Technical Award, LLNL – 2024
+* Director’s Excellence in Publication Award, LLNL – 2023
+* PLS Directorate Winter Publication Award, LLNL – 2023
+* GEM Consortium Fellowship, National GEM Consortium – 2019
+* DOE SCGSR Fellowship, U.S. Department of Energy – 2019
+* NSF GRFP Honorable Mention, National Science Foundation – 2018
+
+Conference Presentations
+======
+Oral Presentations
+* Polyoxometalate ligands reveal different coordination chemistries among lanthanides and heavy actinides – ACS National Meeting, San Francisco, CA (2023)
+* Actinide–Oxide Cluster: Structure and Properties – Actinide Center of Excellence Meeting, Pojoaque, NM (2018)
+* Core-Shell Platinum Coated Nickel Nanowires as Electrochemical Catalysts for Glucose Sensors – Undergraduate Research Symposium, Fordham University, NY (2017)
+Poster Presentations
+* Effects of Metal Ions on Uranium(IV) Sulfate Speciation and Supra-molecular Assembly – FMOCS VI, Corvallis, OR (2019)
+* Synthesis and Characterization of Novel Uranium Sulfate Frameworks: From Simple Dimeric Species to Hetero-Metallic Frameworks – ACS NORM, Portland, OR (2019)
+* Synthesis and Investigation of Tetravalent Uranium Sulfate Speciation – NNSA SSAP Symposium, Albuquerque, NM (2019)
+* Synthesis and Investigation of Mono- and Poly-nuclear Actinide POM Complexes – SACNAS National Conference, San Antonio, TX (2018)
+* Synthesis and Investigation of Mononuclear Actinide POM Complexes – ACS Northwest Regional Meeting, Richland, WA (2018)
+
 
 Publications
 ======
@@ -70,6 +85,10 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+Professional Associations
 ======
-* Currently signed in to 43 different slack teams
+* American Chemical Society
+* IUCr Crystallographer
+* Society of the Advancement of Chicano and Native American in the Sciences
+* Sigma Xi
+
