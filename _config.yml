@@ -22,10 +22,10 @@ repository               : "iancolliard/Colliard-Research.github.io/"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile1.png"
   name             : "Ian Colliard"
   pronouns         : # example: "she/her"  
-  bio              : "Crystallographer, Actinide Chemist, Polyoxometatale Chemist"
+  bio              : "Crystallographer, Actinide Chemist, Polyoxometalate Chemist"
   location         : "Livermore California"
   employer         : "Lawrence Livermore National Lab"
   uri              : # URL
