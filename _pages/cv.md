@@ -66,6 +66,13 @@ Poster Presentations
 * Synthesis and Investigation of Mono- and Poly-nuclear Actinide POM Complexes – SACNAS National Conference, San Antonio, TX (2018)
 * Synthesis and Investigation of Mononuclear Actinide POM Complexes – ACS Northwest Regional Meeting, Richland, WA (2018)
 
+Teaching and Outreach
+======
+* Graduate School Ambassador, Oregon State University – 2018–2022
+* SACNAS Volunteer Mentor, Oregon State University – 2018–2022
+* Chair and Organizer, SACNAS Symposium "Opportunities in Actinide Chemistry" – 2019
+* Teaching Assistant, Oregon State University – 2017
+* Volunteer Tutor, Fordham University – 2016–2017
 
 Publications
 ======
