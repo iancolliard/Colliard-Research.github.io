@@ -19,8 +19,8 @@ redirect_from:
     {% for post in g.items %}
       <li>
         <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong><br>
-        {% if post.journal %}
-          <em>{{ post.journal }}</em>
+        {% if venue %}
+          <em>{{ venue }}</em>
         {% endif %}
       </li>
     {% endfor %}
