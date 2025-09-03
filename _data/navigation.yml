@@ -29,14 +29,5 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-    - title: "Crystallography"
-      url: /crystallography/
-	children:
-  	  - title: "Overview"
-  	    url: /crystallography/
-  	  - title: "Records"
-  	    url: /crystallography/records/
-  	   - title: "By Year"
-  	     url: /crystallography/year/
-  	   - title: "Space Groups"
-  	     url: /crystallography/space-groups/
+  - title: "Crystallography"
+    url: /crystallography/
