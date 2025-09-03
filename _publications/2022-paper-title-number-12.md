@@ -1,7 +1,7 @@
 ---
 title: "Effective Storage of Electrons in Water by the Formation of Highly Reduced Polyoxometalate Clusters"
 collection: manuscripts
-permalink: /publication/3/21/2022-paper-title-number-12
+permalink: /publications/3/21/2022-paper-title-number-12
 date: 2022-03-21
 venue: 'Journal of the American Chemical Society '
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper12.pdf'

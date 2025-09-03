@@ -1,7 +1,7 @@
 ---
 title: "Solution and Solid State Structural Chemistry of Th(IV) and U(IV) 4-Hydroxybenzoates"
 collection: manuscripts
-permalink: /publication/6/19/2018-paper-title-number-2
+permalink: /publications/6/19/2018-paper-title-number-2
 date: 2018-06-19
 venue: 'Inorganic Chemistry'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper2.pdf'

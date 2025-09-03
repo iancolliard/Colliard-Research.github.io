@@ -1,7 +1,7 @@
 ---
 title: "Isolation of a New Polyoxometalate Complex of Plutonium"
 collection: manuscripts
-permalink: /publication/7/3/2025-paper-title-number-25
+permalink: /publications/7/3/2025-paper-title-number-25
 date: 2025-07-03
 venue: 'Chemical Communications'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper25.pdf'

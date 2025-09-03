@@ -1,7 +1,7 @@
 ---
 title: " Metal-Oxo Cluster Formation Using Ammonium and Sulfate to Differentiate MIV (Th, U, Ce) Chemistries"
 collection: manuscripts
-permalink: /publication/5/10/2022-paper-title-number-13
+permalink: /publications/5/10/2022-paper-title-number-13
 date: 2022-05-22
 venue: 'Inorganic Chemistry'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper13.pdf'

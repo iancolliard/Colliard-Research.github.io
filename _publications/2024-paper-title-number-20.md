@@ -1,7 +1,7 @@
 ---
 title: "Synthesis and structural characterization of a hydrated sodium caesium tetracosatungstate(VI), Na5Cs19[W24O84].21H2O"
 collection: manuscripts
-permalink: /publication/6/15/2024-paper-title-number-20
+permalink: /publications/6/15/2024-paper-title-number-20
 date: 2024-06-15
 venue: 'Acta Crystallographica Section E'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper20.pdf'
