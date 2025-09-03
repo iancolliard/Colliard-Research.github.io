@@ -7,8 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-# Journal Covers
-
 ## Chemical Communications (2024)
 ![Chemical Communications (2024)](/Colliard-Research.github.io/images/IMG_0371.png)
 ---
