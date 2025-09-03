@@ -7,7 +7,3 @@ venue: 'Crystal Growth &amp; Design'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper11.pdf'
 citation: 'https://doi.org/10.1021/acs.cgd.1c01385'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper11.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1021/acs.cgd.1c01385

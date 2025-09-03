@@ -7,7 +7,3 @@ venue: 'Inorganic Chemistry'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper13.pdf'
 citation: 'https://doi.org/10.1021/acs.inorgchem.2c01309'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper13.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1021/acs.inorgchem.2c01309

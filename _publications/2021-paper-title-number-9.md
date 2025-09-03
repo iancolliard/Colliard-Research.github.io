@@ -7,7 +7,3 @@ venue: 'Journal of the American Chemical Society '
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper9.pdf'
 citation: 'https://doi.org/10.1021/jacs.1c04095'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper9.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1021/jacs.1c04095

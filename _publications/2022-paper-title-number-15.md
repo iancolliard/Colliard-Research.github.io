@@ -7,7 +7,3 @@ venue: 'Nature Chemistry'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper15.pdf'
 citation: 'https://doi.org/10.1021/acs.inorgchem.2c04014'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper15.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1021/acs.inorgchem.2c04014
