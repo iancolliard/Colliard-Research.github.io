@@ -40,6 +40,7 @@ author_profile: true
           <a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a>
         {%- endif -%}
 
+        {For more information click here}
         {%- if post.url -%}
           &nbsp;<small><a href="{{ post.url | relative_url }}">Details</a></small>
         {%- endif -%}
