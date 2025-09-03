@@ -20,8 +20,8 @@ main:
   - title: "Gallery"
     url: /gallery/
         
-  - title: "About"
-    url: /about/
+ # - title: "About"
+ #   url: /about/
     
   - title: "CV"
     url: /cv/
@@ -29,5 +29,5 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Projects"
-    url: /projects/
+  - title: "Crystallography"
+    url: /crystallography/
