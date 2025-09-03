@@ -1,0 +1,121 @@
+Release Notes for PyCIFRW-3.2  
+=============================
+
+New in this release
+===================
+
+A lot of work has been done under the covers in preparation for the
+appearance of DDLm-based dictionaries, which use dREL methods to derive
+CIF data item values.  The most visible result of this work is 
+the addition of a number of convenience methods for accessing rows in
+CIF loops (see improvements, below).
+
+An attempt was made to allow capturing comments from input CIF files.
+This turns out to be a complex task, and was abandoned, given that
+comments are not meant to convey any important information.  A
+couple of methods were instead added to allow addition of comments
+to generated CIF files.
+ 
+Bug fixes (since 3.0)
+=====================
+
+(3.0)
+* deepcopy failed when copying CifFile objects due to the
+way the __iter__ method was set.  This has been fixed.
+
+* Data values which began with an apostrophe or quotation
+mark were not necessarily put inside quotes when output, leading to
+potential corruption of the output file. 
+
+(3.1.1)
+* Replacing items in a loop could cause a duplicate item error to
+be raised, instead of silently replacing the item
+
+* Loop validation has been broken since 2.0. This should now work
+properly
+
+* _category_mandatory checking behaved differently to that described
+in the journal article; this has been fixed
+
+(3.1.2)
+* The _str_ method of StarError exceptions was broken (always returned None).
+This has been fixed.
+
+(3.1.3)
+
+* Merging of DDL2 dictionaries failed in multiple ways.  This has been
+fixed, in particular, merging of multiple _item.names in a single definition
+block is performed sensibly.
+
+* Only 50 characters of bad values are output in text error reporting
+
+* Save frames in CIF dictionaries had type CifLoopBlock instead of 
+  CifBlock.  This has been fixed.
+
+(3.1.4)
+
+* A stray newline on stdout during flex-based parsing has been 
+  fixed (Boris Dusek)
+
+(3.2)
+
+* Fixed overlay merging bug
+ 
+Improvements/Changes (since 3.0)
+================================
+
+(3.0)
+* A compiled tokenizer is now available to increase speed of file
+input.  The option 'scantype="flex"' should be passed to the 
+ReadCif/ReadStar commands.  Error reporting is minimal.
+
+* Method ChangeItemOrder added to allow moving item position in the
+output file
+
+(3.1.1)
+
+* HTML-formatted validity reporting is now available
+
+* A simple HTML server script for doing validation reporting is now bundled
+
+(3.1.2)
+
+* Better control over output line length added  
+
+* Much better syntax error output added
+
+(3.1.4)
+
+* The ReadStar method accepts an output stream as an alternative 
+  to a filename (Boris Dusek)
+
+* A first_block method is provided for quick access to the first 
+  block in a file (Boris Dusek)
+
+(3.1.5)
+
+* The GetItemPosition call added to return a numeric value for the
+  item's position in the output (relative to loop/block beginning) 
+
+* Changing an item's value no longer moves it to the end of the file
+  (suggested by Boris Dusek)
+
+(3.1.6)
+
+* Runtime and parser generation is now provided by Yapps 2.1.1 (aka
+  Yapps 3)
+
+(3.2)
+
+* Improved pure python parsing speed (Boris Dusek)
+* ValidationResult class for easier access to validation output (Boris Dusek)
+* Nested bracket expressions parsed (for DDLm)
+* Retrieval/removal of specific loop packet using value of a key dataname
+* Datanames in packets returned by GetPacket or iteration can be 
+  accessed by attribute
+* Packets can be added to loops.
+
+Incompatible changes (since 3.0)
+================================
+
+None

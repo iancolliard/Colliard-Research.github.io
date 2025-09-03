@@ -76,6 +76,7 @@ Poster Presentations
 Teaching and Outreach
 ======
 * Graduate School Ambassador, Oregon State University – 2018–2022
+* Undergraduate & Graduate Mentor, Oregon State University – 2018–2022
 * SACNAS Volunteer Mentor, Oregon State University – 2018–2022
 * Chair and Organizer, SACNAS Symposium "Opportunities in Actinide Chemistry" – 2019
 * Teaching Assistant, Oregon State University – 2017

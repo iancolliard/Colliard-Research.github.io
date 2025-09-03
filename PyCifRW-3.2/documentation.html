@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Programming with PyCIFRW and PySTARRW</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+<meta name="originator" content="TeX4ht (http://www.cis.ohio-state.edu/~gurari/TeX4ht/mn.html)"> 
+<!-- html --> 
+<meta name="src" content="documentation.tex"> 
+<meta name="date" content="2006-07-24 13:18:00"> 
+<link rel="stylesheet" type="text/css" href="documentation.css"> 
+</head><body 
+>
+   <div class="maketitle">
+
+
+<h2 class="titleHead">Programming with PyCIFRW and PySTARRW</h2>
+<div class="author" ></div><br>
+<div class="date" ><span 
+class="ecrm-1200">July 24, 2006</span></div>
+   </div>PyCIFRW provides facilities for reading, manipulating and writing CIF and
+STAR files. In addition, CIF files and dictionaries may be validated against DDL1/2
+dictionaries.
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+  id="x1-10001"></a>Installing and Initialising PyCIFRW</h3>
+<!--l. 37--><p class="noindent">Assuming python is installed, you can unpack the distribution into a temporary
+directory, and then type &#8220;<span 
+class="ectt-1000">python setup.py install</span>&#8221; from within this temporary
+directory. Upon completion of this command, four files will have been placed into the
+python packages directory: <span 
+class="ectt-1000">CifFile.py</span>, <span 
+class="ectt-1000">StarFile.py, yapps_compiled_rt.py </span>and
+<span 
+class="ectt-1000">YappsStarParser.py</span>. It is then sufficient to import <span 
+class="ectt-1000">CifFile.py </span>into your python
+session or script to access all CIF features:
+<!--l. 45--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;import</span><span 
+class="ectt-1000">&nbsp;CifFile</span></dd></dl>
+<!--l. 47--><p class="nopar">
+<!--l. 49--><p class="noindent">
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+  id="x1-20002"></a>Working with CIF files</h3>
+<!--l. 52--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+  id="x1-30002.1"></a>Creating a CifFile object</h4>
+
+<!--l. 54--><p class="noindent">CIF files are represented in PyCIFRW as <span 
+class="ectt-1000">CifFile </span>objects. These objects
+behave identically to Python dictionaries, with some additional methods.
+CIF files can be created by calling the <span 
+class="ectt-1000">ReadCif </span>function on a filename or
+URL:
+<!--l. 59--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;cf</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.ReadCif(&#8220;mycif.cif&#8221;)</span>
+     <!--l. 62--><p class="noindent"><span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;df</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.ReadCif(&#8220;ftp://ftp.iucr.org/pub/cifdics/cifdic.register&#8221;)</span></dd></dl>
+<!--l. 63--><p class="nopar">
+Errors are raised if CIF syntax/grammar violations are encountered in the input file
+or line length limits are exceeded.
+<!--l. 67--><p class="indent">   An experimental compiled extension (<span 
+class="ectt-1000">StarScan.so</span>) is available on Linux which
+increases parsing speed by a factor of three or more. To use this facility,
+include the keyword argument <span 
+class="ectt-1000">&#8220;scantype=&#8217;flex&#8217;</span>&#8221; in <span 
+class="ectt-1000">ReadCif</span>/<span 
+class="ectt-1000">ReadStar</span>
+commands:
+<!--l. 72--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cf</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.ReadCif(&#8220;mycif.cif&#8221;,scantype=&#8221;flex&#8221;)</span></dd></dl>
+<!--l. 74--><p class="nopar">
+<!--l. 76--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">2.1.1   </span> <a 
+  id="x1-40002.1.1"></a>Creating a new CifFile</h5>
+<!--l. 78--><p class="noindent">A new <span 
+class="ectt-1000">CifFile </span>object is usually created empty:
+<!--l. 80--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cf</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.CifFile()</span></dd></dl>
+<!--l. 82--><p class="nopar">
+You will need to create at least one <span 
+class="ectt-1000">CifBlock </span>object to hold your data:
+<!--l. 86--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">myblock</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.CifBlock()</span>
+     <!--l. 89--><p class="noindent"><span 
+class="ectt-1000">cf[&#8217;a_block&#8217;]</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;myblock</span></dd></dl>
+
+<!--l. 90--><p class="nopar">
+A <span 
+class="ectt-1000">CifBlock </span>object may be initialised with another <span 
+class="ectt-1000">CifBlock</span>, in which case a copy
+operation is performed, or with a tuple or list of tuples containing key, value
+pairs. These are inserted into the new <span 
+class="ectt-1000">CifBlock </span>using <span 
+class="ectt-1000">AddCifItem </span>(see
+below).
+<!--l. 97--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+  id="x1-50002.2"></a>Manipulating values in a CIF file</h4>
+<!--l. 100--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">2.2.1   </span> <a 
+  id="x1-60002.2.1"></a>Accessing data</h5>
+<!--l. 102--><p class="noindent">The simplest form of access is using standard Python square bracket notation. Data
+blocks and data names within each data block are referenced identically to normal
+Python dictionaries:
+<!--l. 106--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">my_data</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;cf[&#8217;a_data_block&#8217;][&#8217;_a_data_name&#8217;]</span></dd></dl>
+<!--l. 108--><p class="nopar">
+All values are strings with CIF syntactical elements stripped, that is, no enclosing
+quotation marks or semicolons are included in the values. The value associated with a
+<span 
+class="ectt-1000">CifFile </span>dictionary key is always a <span 
+class="ectt-1000">CifBlock </span>object. All standard Python dictionary
+methods (e.g. <span 
+class="ectt-1000">get, update, items, keys</span>) are available for both <span 
+class="ectt-1000">CifFile </span>and
+<span 
+class="ectt-1000">CifBlock </span>objects.
+<!--l. 116--><p class="indent">   If a data name occurs in a loop, a list of string values is returned for the value
+of that dataname. However, in practice, looped data is usually only useful
+in combination with other values from the same loop. <span 
+class="ectt-1000">CifBlock </span>method
+<span 
+class="ectt-1000">GetLoop(dataname) </span>will return all data in the loop containing dataname as a
+<span 
+class="ectt-1000">CifLoopBlock </span>object, which provides the same methods as a <span 
+class="ectt-1000">CifBlock</span>. For
+example, <span 
+class="ectt-1000">keys() </span>returns a list of datanames in the loop. Additionally, loop
+packets can be accessed by accessing the nth value in the <span 
+class="ectt-1000">CifLoopBlock</span>
+object:
+<!--l. 126--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;lb</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;cb.GetLoop(&#8220;_item_5&#8221;)</span>
+     <!--l. 129--><p class="noindent"><span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;lb[0]</span>
+     <!--l. 131--><p class="noindent"><span 
+class="ectt-1000">[&#8217;1&#8217;,</span><span 
+class="ectt-1000">&nbsp;&#8217;a&#8217;,</span><span 
+class="ectt-1000">&nbsp;&#8217;5&#8217;]</span>
+     </dd></dl>
+
+<!--l. 134--><p class="nopar">
+The corresponding datanames are accessible through method GetItemOrder:
+<!--l. 137--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;lb.GetItemOrder()</span>
+     <!--l. 140--><p class="noindent"><span 
+class="ectt-1000">[&#8217;_item_5&#8217;,</span><span 
+class="ectt-1000">&nbsp;&#8217;_item_7&#8217;,</span><span 
+class="ectt-1000">&nbsp;&#8217;_item_6&#8217;]</span></dd></dl>
+<!--l. 141--><p class="nopar">
+An alternative way of accessing loop data is through the built in <span 
+class="ectt-1000">CifLoopBlock</span>
+iterator, which on each call to the iterator object returns a <span 
+class="ectt-1000">CifLoopBlock </span>with
+single-valued datanames (for most purposes identical to a Python dictionary):
+<!--l. 147--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&nbsp;</span>
+     <!--l. 150--><p class="noindent"><span 
+class="ectt-1000">&gt;&gt;&gt;</span><span 
+class="ectt-1000">&nbsp;for</span><span 
+class="ectt-1000">&nbsp;a</span><span 
+class="ectt-1000">&nbsp;in</span><span 
+class="ectt-1000">&nbsp;lb:</span><span 
+class="ectt-1000">&nbsp;print</span><span 
+class="ectt-1000">&nbsp;&#8216;a[&#34;_item_7&#34;]&#8216;</span><span 
+class="ectt-1000">&nbsp;</span>
+     <!--l. 152--><p class="noindent"><span 
+class="ectt-1000">&#8217;a&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;b&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;c&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;d&#8217;</span><span 
+class="ectt-1000">&nbsp;</span></dd></dl>
+<!--l. 153--><p class="nopar">
+<!--l. 155--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">2.2.2   </span> <a 
+  id="x1-70002.2.2"></a>Changing or adding data values</h5>
+<!--l. 157--><p class="noindent">If many operations are going to be performed on a single data block, it is convenient
+to assign that block to a new variable:
+<!--l. 160--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;cf[&#8217;my_block&#8217;]</span></dd></dl>
+<!--l. 162--><p class="nopar">
+A new data name and value may be added, or the value of an existing name changed,
+by straight assignment:
+<!--l. 166--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb[&#8217;_new_data_name&#8217;]</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;4.5</span>
+     <!--l. 169--><p class="noindent"><span 
+class="ectt-1000">cb[&#8217;_old_data_name&#8217;]</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;&#8217;cucumber&#8217;</span></dd></dl>
+
+<!--l. 170--><p class="nopar">
+Old values are overwritten silently. Note that values may be strings or numbers.
+<!--l. 174--><p class="indent">   If a list is given as the value instead of a single string or number, a new loop is
+created containing this one data name, looped. If this data name already
+appeared in a loop, any looped data values which may have co-occurred in
+the loop are deleted. As this is not necessarily the desired behaviour, you
+may wish to access the loop block using the <span 
+class="ectt-1000">GetLoop </span>method described
+above.
+<!--l. 181--><p class="indent">   Alternatively, the <span 
+class="ectt-1000">AddCifItem </span>method can be used to add multiple looped and
+unlooped data items in a single command. <span 
+class="ectt-1000">AddCifItem </span>is called with a 2-element
+tuple argument. The first element of the tuple is either a single dataname, or a list or
+tuple of datanames. The second element is either a single value (in the case of a
+single name in the first element) or a list, each element of which is a list of values
+taken by the corresponding dataname in the first element. A nested tuple of
+datanames in the first element together with the corresponding nested tuple
+of lists in the second element will become a loop block in the Cif file. In
+general, however, it will be less confusing to create a <span 
+class="ectt-1000">CifLoopBlock </span>object,
+populate it with data items, and then insert it into a <span 
+class="ectt-1000">CifBlock </span>object (see
+below).
+<!--l. 195--><p class="indent">   Another method, <span 
+class="ectt-1000">AddToLoop(dataname,newdata), </span>adds <span 
+class="ectt-1000">newdata </span>to the
+pre-existing loop containing <span 
+class="ectt-1000">dataname</span>, silently overwriting duplicate data. <span 
+class="ectt-1000">Newdata</span>
+should be a Python dictionary of dataname - datavalue pairs, with <span 
+class="ectt-1000">datavalue </span>a list
+of new/replacement values.
+<!--l. 201--><p class="indent">   Note that lists (and objects) returned by PyCIFRW actually represent
+the list currently inside the CifBlock, and therefore any modification to
+them will modify the stored list. While this is often the desired behaviour,
+if you intend to alter any such lists in other parts of your program while
+maintaining CIF integrity, you should first copy them to avoid destroying the loop
+structure:
+<!--l. 208--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">mysym</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;cb[&#8217;_symmetry_ops&#8217;][:]</span>
+     <!--l. 211--><p class="noindent"><span 
+class="ectt-1000">mysym.append(&#8217;x-1/2,y+1/2,z&#8217;)</span></dd></dl>
+<!--l. 212--><p class="nopar">
+<!--l. 214--><p class="noindent"><span class="paragraphHead"><a 
+  id="x1-80002.2.2"></a><span 
+class="ecbx-1000">Changing item order</span></span>
+   The <span 
+class="ectt-1000">ChangeItemOrder </span>method allows the order in which data items appear in the
+printed file to be changed:
+<!--l. 219--><p class="noindent">
+
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">mycif[&#8217;testblock&#8217;].ChangeItemOrder(&#8217;_item_5&#8217;,0)</span></dd></dl>
+<!--l. 221--><p class="nopar">
+will move <span 
+class="ectt-1000">_item_5 </span>to the beginning of the datablock. When changing the order inside
+a loop block, the loop block&#8217;s method must be called i.e.:
+<!--l. 226--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">aloop</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;mycif[&#8217;testblock&#8217;].GetLoop(&#8217;_loop_item_1&#8217;)</span>
+     <!--l. 229--><p class="noindent"><span 
+class="ectt-1000">aloop.ChangeItemOrder(&#8217;_loop_item_1&#8217;,4)</span></dd></dl>
+<!--l. 230--><p class="nopar">
+Note also that the position of a loop within the file can be changed in this way as
+well, simply by passing the <span 
+class="ectt-1000">CifLoopBlock </span>object as the first argument:
+<!--l. 235--><p class="indent">   <span 
+class="ectt-1000">mycif[&#8217;testblock&#8217;].ChangeItemOrder(aloop,0)</span>
+<!--l. 237--><p class="indent">   will move the loop block to the beginning of the printed datablock.
+<!--l. 240--><p class="noindent"><span class="paragraphHead"><a 
+  id="x1-90002.2.2"></a><span 
+class="ecbx-1000">Examples using loops</span></span>
+<!--l. 243--><p class="indent">   <span class="subparagraphHead"> <a 
+  id="x1-100002.2.2"></a><span 
+class="ecbx-1000">Adding/replacing a single item with looped values:</span></span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb[&#8217;_symmetry&#8217;]</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;[&#8217;x,y,z&#8217;,&#8217;-x,-y,-z&#8217;,&#8217;x+1/2,y,z&#8217;]</span></dd></dl>
+<!--l. 247--><p class="nopar">
+results in an output fragment
+<!--l. 250--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">loop_</span>
+     <!--l. 253--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_symmetry</span>
+     <!--l. 255--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;x,y,z</span>
+     <!--l. 257--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;-x,-y,-z</span>
+     <!--l. 259--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;x+1/2,y,z</span></dd></dl>
+<!--l. 260--><p class="nopar">
+
+<!--l. 262--><p class="indent">   <span class="subparagraphHead"> <a 
+  id="x1-110002.2.2"></a><span 
+class="ecbx-1000">Adding a complete loop:</span></span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb.AddCifItem(([[&#8217;_example&#8217;,&#8217;_example_detail&#8217;]],</span>
+     <!--l. 267--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;[[[&#8217;123.4&#8217;,&#8217;4567.8&#8217;],</span>
+     <!--l. 269--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;[&#8217;small</span><span 
+class="ectt-1000">&nbsp;cell&#8217;,&#8217;large</span><span 
+class="ectt-1000">&nbsp;cell&#8217;]]]))</span></dd></dl>
+<!--l. 270--><p class="nopar">
+results in an output fragment:
+<!--l. 273--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">loop_</span>
+     <!--l. 276--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example</span>
+     <!--l. 278--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example_detail</span>
+     <!--l. 280--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;123.4</span><span 
+class="ectt-1000">&nbsp;&#8217;small</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span>
+     <!--l. 282--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;4567.8</span><span 
+class="ectt-1000">&nbsp;&#8217;large</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span></dd></dl>
+<!--l. 283--><p class="nopar">
+<!--l. 285--><p class="indent">   <span class="subparagraphHead"> <a 
+  id="x1-120002.2.2"></a><span 
+class="ecbx-1000">Appending a new dataname to a pre-existing loop:</span></span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb.AddToLoop(</span>
+     <!--l. 290--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;&#8217;_example&#8217;,{&#8217;_comment&#8217;:[&#8221;not</span><span 
+class="ectt-1000">&nbsp;that</span><span 
+class="ectt-1000">&nbsp;small&#8221;,&#8221;Big</span><span 
+class="ectt-1000">&nbsp;and</span><span 
+class="ectt-1000">&nbsp;beautiful&#8221;]}</span>
+     <!--l. 292--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;)</span></dd></dl>
+<!--l. 293--><p class="nopar">
+changes the previous output to be
+<!--l. 296--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">loop_</span>
+     <!--l. 299--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example</span>
+     <!--l. 301--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example_detail</span>
+     <!--l. 303--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_comment</span>
+     <!--l. 305--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;123.4</span><span 
+class="ectt-1000">&nbsp;&#8217;small</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;not</span><span 
+class="ectt-1000">&nbsp;that</span><span 
+class="ectt-1000">&nbsp;small&#8217;</span>
+     <!--l. 307--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;4567.8</span><span 
+class="ectt-1000">&nbsp;&#8217;large</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;Big</span><span 
+class="ectt-1000">&nbsp;and</span><span 
+class="ectt-1000">&nbsp;beautiful&#8217;</span></dd></dl>
+
+<!--l. 308--><p class="nopar">
+<!--l. 310--><p class="indent">   <span class="subparagraphHead"> <a 
+  id="x1-130002.2.2"></a><span 
+class="ecbx-1000">Changing pre-existing data in a loop:</span></span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cb.AddToLoop(&#8217;_comment&#8217;,{&#8217;_example&#8217;:[&#8217;12.2&#8217;,&#8217;12004&#8217;]})</span>
+     </dd></dl>
+<!--l. 316--><p class="nopar">
+changes the previous example to
+<!--l. 319--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">loop_</span>
+     <!--l. 322--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example</span>
+     <!--l. 324--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_example_detail</span>
+     <!--l. 326--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;_comment</span>
+     <!--l. 328--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;12.2</span><span 
+class="ectt-1000">&nbsp;&#8217;small</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;not</span><span 
+class="ectt-1000">&nbsp;that</span><span 
+class="ectt-1000">&nbsp;small&#8217;</span>
+     <!--l. 330--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;12004</span><span 
+class="ectt-1000">&nbsp;&#8217;large</span><span 
+class="ectt-1000">&nbsp;cell&#8217;</span><span 
+class="ectt-1000">&nbsp;&#8217;Big</span><span 
+class="ectt-1000">&nbsp;and</span><span 
+class="ectt-1000">&nbsp;beautiful&#8217;</span></dd></dl>
+<!--l. 331--><p class="nopar">
+<!--l. 333--><p class="indent">   <span class="subparagraphHead"> <a 
+  id="x1-140002.2.2"></a><span 
+class="ecbx-1000">Adding a new loop packet. </span></span>
+   PyCifRW does not (yet) directly support this: the following code shows one way
+to accomplish this indirectly for the above example.
+<!--l. 338--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">newdata=</span><span 
+class="ectt-1000">&nbsp;{&#8217;_example&#8217;:[&#8217;101.1&#8217;,&#8217;255&#8217;],</span>
+     <!--l. 341--><p class="noindent"><span 
+class="ectt-1000">&nbsp;&#8217;_example_detail&#8217;:[&#8217;medium</span><span 
+class="ectt-1000">&nbsp;cell&#8217;,&#8217;also</span><span 
+class="ectt-1000">&nbsp;medium&#8217;],</span>
+     <!--l. 343--><p class="noindent"><span 
+class="ectt-1000">&nbsp;&#8217;_comment&#8217;:[&#8217;manageable&#8217;,&#8217;still</span><span 
+class="ectt-1000">&nbsp;manageable&#8217;]</span>
+     <!--l. 345--><p class="noindent"><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;</span><span 
+class="ectt-1000">&nbsp;}</span>
+     <!--l. 347--><p class="noindent"><span 
+class="ectt-1000">olddata</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;cb.GetLoop(&#8217;_example&#8217;)</span><span 
+class="ectt-1000">&nbsp;#(key,value)</span><span 
+class="ectt-1000">&nbsp;list</span>
+     <!--l. 349--><p class="noindent"><span 
+class="ectt-1000">map(lambda</span><span 
+class="ectt-1000">&nbsp;a:newdata[a[0]].extend(a[1]),loopdata)</span>
+     <!--l. 351--><p class="noindent"><span 
+class="ectt-1000">cb.AddCifItem((newdata.keys(),newdata.values()))</span></dd></dl>
+
+<!--l. 352--><p class="nopar">
+Note that, as the lists returned by PyCIFRW are direct pointers to the original lists,
+it is possible to extend them directly (e.g. <span 
+class="ectt-1000">cb[&#8217;_example&#8217;].append(&#8217;101.1&#8217;)</span>),
+however, this bypasses all data value syntax checks and loop length checks and is not
+recommended.
+<!--l. 359--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
+  id="x1-150002.3"></a>Writing Cif Files</h4>
+<!--l. 361--><p class="noindent">The <span 
+class="ectt-1000">CifFile </span>method <span 
+class="ectt-1000">WriteOut </span>returns a string which may be passed to an open file
+descriptor:
+<!--l. 364--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;outfile</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;open(&#8220;mycif.cif&#8221;)</span>
+     <!--l. 367--><p class="noindent"><span 
+class="ectt-1000">&gt;&gt;&gt;outfile.write(cf.WriteOut())</span></dd></dl>
+<!--l. 368--><p class="nopar">
+An alternative method uses the built-in Python <span 
+class="ectt-1000">str() </span>function:
+<!--l. 371--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;outfile.write(str(cf))</span></dd></dl>
+<!--l. 373--><p class="nopar">
+<span 
+class="ectt-1000">WriteOut </span>takes an optional argument, <span 
+class="ectt-1000">comment</span>, which should be a string
+containing a comment which will be placed at the top of the output file.
+This comment string must already contain # characters at the beginning of
+lines:
+<!--l. 379--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">&gt;&gt;&gt;outfile.write(cf.WriteOut(&#8220;#This</span><span 
+class="ectt-1000">&nbsp;is</span><span 
+class="ectt-1000">&nbsp;a</span><span 
+class="ectt-1000">&nbsp;test</span><span 
+class="ectt-1000">&nbsp;file&#8221;))</span></dd></dl>
+<!--l. 381--><p class="nopar">
+Two additional keyword arguments control line length in the output file: <span 
+class="ectt-1000">wraplength</span>
+and <span 
+class="ectt-1000">maxoutlength</span>. Lines in the output file are guaranteed to be shorter
+than <span 
+class="ectt-1000">maxoutlength </span>characters, and PyCIFRW will additionally insert a line
+break if putting two data values or a dataname/datavalue pair together
+on the same line would exceed <span 
+class="ectt-1000">wraplength</span>. In other words, unless data
+values are longer than <span 
+class="ectt-1000">maxoutlength </span>characters long, no line breaks will be
+inserted in the output file. By default, <span 
+class="ectt-1000">wraplength </span>= 80 and <span 
+class="ectt-1000">maxoutlength </span>=
+2048.
+
+<!--l. 392--><p class="indent">   These values may be set on a per block/loop basis by calling the <span 
+class="ectt-1000">SetOutputLength</span>
+method of the loop or block.
+<!--l. 395--><p class="indent">   The order of output of items within a <span 
+class="ectt-1000">CifFile </span>or <span 
+class="ectt-1000">CifBlock </span>is specified using the
+<span 
+class="ectt-1000">ChangeItemOrder </span>method (see above). The default order is the order that items were
+inserted or read in to the <span 
+class="ectt-1000">CifFile/CifBlock</span>.
+<!--l. 401--><p class="noindent">
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+  id="x1-160003"></a>Dictionaries and Validation</h3>
+<!--l. 404--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+  id="x1-170003.1"></a>Dictionaries</h4>
+<!--l. 406--><p class="noindent">DDL dictionaries may also be read into <span 
+class="ectt-1000">CifFile </span>objects. For this purpose, <span 
+class="ectt-1000">CifBlock</span>
+objects automatically support save frames (used in DDL2 dictionaries), which
+are accessed using the <span 
+class="ectt-1000">&#8220;saves&#8221; </span>key. The value of this key is a collection of
+<span 
+class="ectt-1000">CifBlock </span>objects indexed by save frame name, and available operations
+are similar to those available for a <span 
+class="ectt-1000">CifFile</span>, which is also a collection of
+<span 
+class="ectt-1000">CifBlock</span>s.
+<!--l. 414--><p class="indent">   A <span 
+class="ectt-1000">CifDic </span>object hides the difference between DDL1 dictionaries, where all
+definitions are separate data blocks, and DDL2 dictionaries, where all definitions are
+in save frames of a single data block. A <span 
+class="ectt-1000">CifDic </span>is initialised with a single file name or
+<span 
+class="ectt-1000">CifFile </span>object:
+<!--l. 420--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">cd</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;CifFile.CifDic(&#8220;cif_core.dic&#8221;)</span></dd></dl>
+<!--l. 422--><p class="nopar">
+Definitions are accessed using the usual notation, e.g. <span 
+class="ectt-1000">cd[&#8217;_atom_site_aniso_label&#8217;]</span>.
+Return values are always <span 
+class="ectt-1000">CifBlock </span>objects. Additionally, the <span 
+class="ectt-1000">CifDic </span>object contains
+a number of instance variables derived from dictionary global data:
+<!--l. 428--><p class="indent">
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1000">dicname</span> </dt><dd 
+class="description">The dictionary name + version as given in the dictionary
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">diclang</span> </dt><dd 
+class="description">&#8217;DDL1&#8217; or &#8217;DDL2&#8217;
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">typedic</span> </dt><dd 
+class="description">Python   dictionary   matching   typecode   with   compiled   regular
+     expression</dd></dl>
+
+<!--l. 434--><p class="indent"><span 
+class="ectt-1000">CifDic </span>objects provide a large number of validation functions, which all return a
+Python dictionary which contains at least the key <span 
+class="ectt-1000">&#8220;result&#8221;</span>. <span 
+class="ectt-1000">&#8220;result&#8221; </span>takes the
+values <span 
+class="ectt-1000">True</span>, <span 
+class="ectt-1000">False </span>or <span 
+class="ectt-1000">None </span>depending on the success, failure or non-applicability of
+each test. In case of failure, additional keys are returned depending on the nature of
+the error.
+<!--l. 442--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+  id="x1-180003.2"></a>Validation</h4>
+<!--l. 444--><p class="noindent">A top level function is provided for convenient validation of CIF files:
+<!--l. 447--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">CifFile.validate(&#8220;mycif.cif&#8221;,dic</span><span 
+class="ectt-1000">&nbsp;=</span><span 
+class="ectt-1000">&nbsp;&#8221;cif_core.dic&#8221;)</span></dd></dl>
+<!--l. 449--><p class="nopar">
+This returns a tuple <span 
+class="ectt-1000">(valid_result, no_matches)</span>. <span 
+class="ectt-1000">valid_result </span>and <span 
+class="ectt-1000">no_matches</span>
+are Python dictionaries indexed by block name. For <span 
+class="ectt-1000">valid_result</span>, the value for each
+block is itself a dictionary indexed by <span 
+class="ectt-1000">item_name</span>. The value attached to each item
+name is a list of <span 
+class="ectt-1000">(check_function, check_result) </span>tuples, with <span 
+class="ectt-1000">check_result </span>a
+small dictionary containing at least the key <span 
+class="ectt-1000">&#8220;result&#8221;</span>. All tests which passed or were
+not applicable are removed from this dictionary, so result is always <span 
+class="ectt-1000">False</span>. Additional
+keys contain auxiliary information depending on the test. Each of the items
+in <span 
+class="ectt-1000">no_matches </span>is a simple list of item names which were not found in the
+dictionary.
+<!--l. 462--><p class="indent">   If a simple validation report is required, the function <span 
+class="ectt-1000">validate_report </span>can be
+called on the output of the above function, printing a simple ASCII report. This
+function can be studied as an example of how to process the structure returned by
+the &#8217;<span 
+class="ectt-1000">validate</span>&#8217; function.
+<!--l. 468--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
+  id="x1-190003.2.1"></a>Limitations on validation</h5>
+<!--l. 470--><p class="noindent">
+     <ol type="1" class="enumerate1" >
+     <li class="enumerate" value="1" 
+><a 
+  id="x1-19002x1"></a>(DDL2 only) When validating data dictionaries themselves, no checks are
+     made on group and subgroup consistency (e.g. that a specified subgroup
+     is actually defined).
+     </li>
+     <li class="enumerate" value="2" 
+><a 
+  id="x1-19004x2"></a>(DDL1 only) Some _type_construct attributes in the DDL1 spec file are
+     not machine-readable, so values cannot be checked for consistency</li></ol>
+<!--l. 476--><p class="nopar">
+
+<!--l. 478--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+  id="x1-200003.3"></a>ValidCifFile objects</h4>
+<!--l. 480--><p class="noindent">A <span 
+class="ectt-1000">ValidCifFile </span>object behaves identically to a <span 
+class="ectt-1000">CifFile </span>object with the additional
+characteristic that it is valid against the given dictionary object. Any attempt to set
+a data value, or add or remove a data name, that would invalidate the object raises a
+<span 
+class="ectt-1000">ValidCifFile </span>error.
+<!--l. 486--><p class="indent">   Additional keywords for initialisation are:
+<!--l. 488--><p class="indent">
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1000">dic</span> </dt><dd 
+class="description">A <span 
+class="ectt-1000">CifDic </span>object to use in validation
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">diclist</span> </dt><dd 
+class="description">A list of <span 
+class="ectt-1000">CifFile </span>objects or filenames to be merged into a <span 
+class="ectt-1000">CifDic </span>object
+     (see below)
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">mergemode</span> </dt><dd 
+class="description">Choose merging method (one of &#8217;<span 
+class="ectt-1000">strict</span>&#8217;,&#8217;<span 
+class="ectt-1000">overlay</span>&#8217;, &#8217;<span 
+class="ectt-1000">replace</span>&#8217;)</dd></dl>
+<!--l. 496--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
+  id="x1-210003.4"></a>Merging dictionaries</h4>
+<!--l. 498--><p class="noindent">PyCIFRW provides a top-level function to merge DDL1/2 dictionary files. It takes a
+list of CIF filenames or <span 
+class="ectt-1000">CifFile </span>objects, and a <span 
+class="ectt-1000">mergemode </span>keyword argument. CIF
+files are merged from left to right, that is, the second file in the list is merged into the
+first file in the list and so on.
+<!--l. 504--><p class="indent">   For completeness we list the arguments of the <span 
+class="ectt-1000">CifFile merge </span>method:
+<!--l. 507--><p class="indent">
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1000">new_block_set</span> </dt><dd 
+class="description">(first  argument,  no  keyword)  The  new  dictionary  to  be
+     merged into the current dictionary
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">mode</span> </dt><dd 
+class="description">merging mode to use (&#8217;strict&#8217;, &#8217;overlay&#8217; or &#8217;replace&#8217;)
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">single_block</span> </dt><dd 
+class="description">a  two  element  list  <span 
+class="ectt-1000">[oldblockname, newblockname]</span>,  where
+     <span 
+class="ectt-1000">oldblockname </span>in the current file is merged with <span 
+class="ectt-1000">newblockname </span>in the new
+     file. This is useful when blocknames don&#8217;t match
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">idblock</span> </dt><dd 
+class="description">This  block  is  ignored  when  merging  -  useful  when  merging  DDL1
+     dictionaries in strict mode, in which case the <span 
+class="ectt-1000">on_this_dictionary </span>block
+     would cause an error.</dd></dl>
+
+<!--l. 519--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">3.4.1   </span> <a 
+  id="x1-220003.4.1"></a>Limitations on merging</h5>
+<!--l. 521--><p class="noindent">In overlay mode, the COMCIFS recommendations require that, when both
+definitions contain identical attributes which can be looped, the merging
+process should construct those loops and include both sets of data in the new
+loop.
+<!--l. 526--><p class="indent">   This is not yet implemented in PyCIFRW, as it involves checking the
+DDL1/DDL2 spec to determine which attributes may be looped together.
+<!--l. 530--><p class="noindent">
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+  id="x1-230004"></a>Working with STAR files</h3>
+<!--l. 533--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
+  id="x1-240004.1"></a>Creating STAR files</h4>
+<!--l. 535--><p class="noindent">Star files are created entirely analogously to CIF files, using the <span 
+class="ectt-1000">StarFile </span>object or
+<span 
+class="ectt-1000">ReadStar </span>function.
+<!--l. 539--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">4.2   </span> <a 
+  id="x1-250004.2"></a>Manipulating values</h4>
+<!--l. 541--><p class="noindent">The usual square bracket notation applies, as for <span 
+class="ectt-1000">CifFile </span>and <span 
+class="ectt-1000">CifBlock </span>objects.
+<span 
+class="ectt-1000">StarFiles </span>are built out of <span 
+class="ectt-1000">StarBlock </span>objects in exactly the same way as <span 
+class="ectt-1000">CifFile</span>
+objects are built out of <span 
+class="ectt-1000">CifBlock </span>objects. <span 
+class="ectt-1000">StarBlock </span>objects can contain any
+number of <span 
+class="ectt-1000">LoopBlock </span>objects, which represent STAR loop blocks. Crucially, these
+<span 
+class="ectt-1000">LoopBlock </span>objects may contain nested loops, which are also <span 
+class="ectt-1000">LoopBlock </span>objects.
+Loops are inserted into a <span 
+class="ectt-1000">LoopBlock </span>by calling the <span 
+class="ectt-1000">insert_loop </span>method, and may
+be nested to an arbitrary level.
+<!--l. 552--><p class="noindent">
+   <h5 class="subsubsectionHead"><span class="titlemark">4.2.1   </span> <a 
+  id="x1-260004.2.1"></a>Iterators</h5>
+<!--l. 554--><p class="noindent">Any LoopBlock object has two iterator methods: <span 
+class="ectt-1000">recursive_iter </span>and <span 
+class="ectt-1000">flat_iterator</span>.
+On each call of the iterator created by a <span 
+class="ectt-1000">recursive_iter </span>call, a Python
+dictionary is returned with single-valued keys corresponding to a single set of
+values. If there are multiple trees of nested loops in a <span 
+class="ectt-1000">LoopBlock</span>, each tree is
+iterated over separately, as there is no reason that looped values inside a
+second loop block would have any relationship with values inside a first
+loop block. This iterator will thus return all possible sets of values for the
+<span 
+class="ectt-1000">LoopBlock</span>.
+<!--l. 564--><p class="indent">   The <span 
+class="ectt-1000">flat_iterator </span>method does not dig down into nested loops. Instead,
+iterators created from it return a new <span 
+class="ectt-1000">LoopBlock </span>with key-value pairs corresponding
+to a single top-level packet; nested loops are included, but they also have only
+
+data corresponding to the selected top-level packet available. This iterator
+thus iterates through the top-level packets, collapsing the nesting level by
+one.
+<!--l. 571--><p class="indent">   The default iterator for CifBlocks (as opposed to StarBlocks) is <span 
+class="ectt-1000">recursive_iter</span>.
+<!--l. 574--><p class="noindent">
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+  id="x1-270005"></a>Example programs</h3>
+<!--l. 576--><p class="noindent">A program which uses PyCIFRW for validation, <span 
+class="ectt-1000">validate_cif.py</span>, is included in the
+distribution in the Programs subdirectory. It will validate a CIF file (including
+dictionaries) against one or more dictionaries which may be specified by name and
+version or as a filename on the local disk. If name and version are specified, the IUCr
+canonical registry or a local registry is used to find the dictionary and download it if
+necessary.
+<!--l. 585--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
+  id="x1-280005.1"></a>Usage</h4>
+<!--l. 587--><p class="noindent">
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <span 
+class="ectt-1000">python</span><span 
+class="ectt-1000">&nbsp;validate_cif.py</span><span 
+class="ectt-1000">&nbsp;[options]</span><span 
+class="ectt-1000">&nbsp;ciffile</span></dd></dl>
+<!--l. 589--><p class="nopar">
+<!--l. 591--><p class="noindent">
+   <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
+  id="x1-290005.2"></a>Options</h4>
+<!--l. 593--><p class="noindent">
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1000">&#8211;version</span> </dt><dd 
+class="description">show version number and exit
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-h,&#8211;help</span> </dt><dd 
+class="description">print short help message
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-d</span><span 
+class="ecbx-1000">&nbsp;dirname</span> </dt><dd 
+class="description">directory to find/store dictionary files
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-f</span><span 
+class="ecbx-1000">&nbsp;dictname</span> </dt><dd 
+class="description">filename of locally-stored dictionary
+
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-u</span><span 
+class="ecbx-1000">&nbsp;version</span> </dt><dd 
+class="description">dictionary version to resolve using registry
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-n</span><span 
+class="ecbx-1000">&nbsp;name</span> </dt><dd 
+class="description">dictionary name to resolve using registry
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-s</span> </dt><dd 
+class="description">store downloaded dictionary locally (default True)
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-c</span> </dt><dd 
+class="description">fetch and use canonical registry from IUCr
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-r</span><span 
+class="ecbx-1000">&nbsp;registry</span> </dt><dd 
+class="description">location of registry as filename or URL
+     </dd><dt class="description">
+<span 
+class="ecbx-1000">-t</span> </dt><dd 
+class="description">The file to be checked is itself a DDL2 dictionary</dd></dl>
+<!--l. 606--><p class="noindent">
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+  id="x1-300006"></a>Further information</h3>
+<!--l. 608--><p class="noindent">The source files are in a literate programming format (noweb) with file extension .nw.
+HTML documentation generated from these files and containing both code and
+copious comments is included in the downloaded package. Details of interpretation of
+the current standards as relates to validation can be found in these files.
+ 
+</body></html> 
+
+
+
