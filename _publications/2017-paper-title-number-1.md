@@ -1,7 +1,7 @@
 ---
 title: "One-Dimensional Nanostructures for PEM Fuel Cell Applications"
 collection: manuscripts
-permalink: /publications/6/6/2017-paper-title-number-1/
+permalink: Colliard-Research.github.io//publications/6/6/2017-paper-title-number-1/
 date: 2017-06-06
 venue: 'Academic Press'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper1.pdf'
