@@ -24,7 +24,6 @@ author_profile: true
   <ol reversed start="{{ counter }}">
     {%- for post in g.items -%}
       <li>
-        {%- comment -%} Title links directly to the PDF if available {%- endcomment -%}
         {%- if post.paperurl -%}
           {%- if post.paperurl contains '://' -%}
             <a href="{{ post.paperurl }}" target="_blank" rel="noopener">
@@ -36,15 +35,8 @@ author_profile: true
             </a>
           {%- endif -%}
         {%- else -%}
-          {# Fallback: no PDF, link to the item page #}
           <a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a>
         {%- endif -%}
-
-        {For more information click here}
-        {%- if post.url -%}
-          &nbsp;<small><a href="{{ post.url | relative_url }}">Details</a></small>
-        {%- endif -%}
-
         <br>
         {%- if post.journal -%}<em>{{ post.journal }}</em>{%- endif -%}
       </li>
