@@ -7,7 +7,3 @@ venue: 'Acta Crystallographica Section E'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper20.pdf'
 citation: 'https://doi.org/10.1107/S2056989024004778'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper20.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1107/S2056989024004778

@@ -7,7 +7,3 @@ venue: 'Chemical Communications'
 paperurl: 'http://iancolliard.github.io/Colliard-Research.github.io/files/paper23.pdf'
 citation: 'https://doi.org/10.1039/D4CC05558F'
 ---
-
-<a href='http://iancolliard.github.io/Colliard-Research.github.io/files/paper23.pdf'>Download paper here</a>
-
-Recommended citation: https://doi.org/10.1039/D4CC05558F

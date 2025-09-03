@@ -11,6 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
+*****
 <h1>Publications</h1>
 
 {%- assign pubs = site.publications | sort: "date" | reverse -%}
