@@ -9,9 +9,9 @@ author_profile: true
 
 # Lanthanide-POMs 
 
-| ![Crystal 1](/Colliard-Research.github.io/images/gallery/crystal1.jpg) | ![Crystal 2](/Colliard-Research.github.io/images/gallery/crystal2.jpg) |
+| ![](/Colliard-Research.github.io/images/IMG_5418.png) | ![](/Colliard-Research.github.io/images/IMG_5477.png) |
 |--------------------------------------------|--------------------------------------------|
-| ![Crystal 3](/Colliard-Research.github.io/images/gallery/crystal3.jpg) | ![Crystal 4](/Colliard-Research.github.io/images/gallery/crystal4.jpg) |
+| ![](/Colliard-Research.github.io/images/IMG_5482.png) | ![](/Colliard-Research.github.io/images/IMG_5559.png) |
 
 # Curium-POMs
 
