@@ -16,4 +16,6 @@ Below are links to subpages top further explore my structures and the field.
 - [Record Holders](/crystallography/record/) – personal record breaking structures
 - [By Year](/crystallography/year/) – breakdown of the number of structures by year
 
+Elements I have crystallized!
+
 ![Elements I have crystallized](/Colliard-Research.github.io/images/Figure-pt.png)
