@@ -223,7 +223,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  crystallography:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -269,10 +269,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _crystallography
   - scope:
       path: ""
-      type: portfolio
+      type: crystallography
     values:
       layout: single
       author_profile: true
