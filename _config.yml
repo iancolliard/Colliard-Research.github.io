@@ -13,8 +13,8 @@ title                    : "My Research"
 title_separator          : "-"
 name                     : &name "Ian Colliard"
 description              : &description "personal description"
-url                      : https://iancolliard.github.io/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "/Colliard-Research.github.io" # the subpath of your site, e.g. "/blog"
+url                      : https://iancolliard.github.io/Colliard-Research.github.io/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "iancolliard/Colliard-Research.github.io/"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -217,10 +217,13 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-  crystallography:
+  portfolio:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -248,7 +251,16 @@ defaults:
     values:
       layout: single
       author_profile: true
-   # _publications
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _publications
   - scope:
       path: ""
       type: publications
@@ -257,15 +269,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _crystallography
+  # _portfolio
   - scope:
       path: ""
-      type: crystallography
+      type: portfolio
     values:
       layout: single
       author_profile: true
       share: true
-      comments: true
+      comment: true
   # _talks
   - scope:
       path: ""
