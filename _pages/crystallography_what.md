@@ -10,7 +10,7 @@ permalink: /crystallography/what/
 
 
 
-\# What is Crystallography?
+# What is Crystallography?
 
 
 
