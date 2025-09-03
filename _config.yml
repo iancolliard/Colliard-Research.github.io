@@ -229,6 +229,10 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  crystallography:
+    output: true
+    permalink: /:collection/:path/
+
 
 
 # These settings control how pages and collections are included in the site
@@ -277,7 +281,7 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comment: true
+      comments: true
   # _talks
   - scope:
       path: ""
@@ -286,6 +290,15 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _crystallography
+  - scope:
+      path: ""
+      type: crytsallography
+    values:
+      layout: single
+      author_profile: true
+      share: true
+
 
 
 # Sass/SCSS
