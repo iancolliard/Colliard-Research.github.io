@@ -20,8 +20,8 @@ main:
   - title: "Gallery"
     url: /gallery/
         
- # - title: "About"
- #   url: /about/
+  - title: "Journal Covers"
+    url: /journal covers/
     
   - title: "CV"
     url: /cv/
