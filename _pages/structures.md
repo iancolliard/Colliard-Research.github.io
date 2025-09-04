@@ -8,8 +8,8 @@ author_profile: true
 {% include base_path %}
 
 ## Largest Unit Cell (Top 10 by volume)
-1. [LuU-U84]({{ "/Colliard-Research.github.io/crystallography/luu-u84/" | relative_url }}) — **V = 137813.0 Å³**, Z = 1.0, space group 'R -3 c'
-2. [NH4(Ce62)2-alpha]({{ "/Colliard-Research.github.io/crystallography/nh4-ce62-2-alpha/" | relative_url }}) — **V = 120929.6 Å³**, Z = 4.0, space group 'P 1 21/n 1'
+1. [LuU-U84]({{ "/Colliard-Research.github.io/crystallography/luu-u84/" | relative_url }}) — **V = 137813.0 Å³**, Z = 1.0, space group R-3c
+2. [NH4(Ce62)2-alpha]({{ "/Colliard-Research.github.io/crystallography/nh4-ce62-2-alpha/" | relative_url }}) — **V = 120929.6 Å³**, Z = 4.0, space group P2<sub>1</sub>/n
 3. [ErU6-(U84)2]({{ "/Colliard-Research.github.io/crystallography/eru6-u84-2/" | relative_url }}) — **V = 84891.0 Å³**, Z = 1.00008, space group 'P n -3'
 4. [NH4(Ce5)2Ce70]({{ "/Colliard-Research.github.io/crystallography/nh4-ce5-2ce70/" | relative_url }}) — **V = 74657.1 Å³**, Z = 4.0, space group 'I 1 2/a 1'
 5. [nh4cece622]({{ "/Colliard-Research.github.io/crystallography/nh4cece622/" | relative_url }}) — **V = 59403.8 Å³**, Z = 2.0, space group 'P -1'
