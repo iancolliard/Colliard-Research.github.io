@@ -19,7 +19,9 @@ A Select Few of My Personal Favorite Structures!
 
 Cluster of Cluster
 -------
-![](/Colliard-Research.github.io/images/clusters.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+![](/Colliard-Research.github.io/images/clusters.png){: style="display:block; width:250px;" } ![](/Colliard-Research.github.io/images/clusters1.png){: style="display:block; width:250px;" } 
+
 My first structure with U(IV), a cluster made of 14 clusters linked together. The U<sub>84</sub> structure can then act a 'super-atom,' mimicking the atom-like behavior in lattice formation.
 
 The Rings
