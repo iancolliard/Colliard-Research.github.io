@@ -229,6 +229,12 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  crystallography:
+    sections:
+    output: flase
+    chapters:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
