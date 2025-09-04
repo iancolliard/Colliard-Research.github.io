@@ -13,3 +13,31 @@ This method provides an unparalleled level of structural detail, allowing resear
 
 -------
 
+Favorites! 
+================
+
+
+Cluster of Cluster
+-------
+![](/Colliard-Research.github.io/images/clusters.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+Sandwhich
+-------
+![](/Colliard-Research.github.io/images/sandwich.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+PacMan
+-------
+![](/Colliard-Research.github.io/images/NiCe70-PacMan.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+The Rings
+-------
+![](/Colliard-Research.github.io/images/onering.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+Interlocking-ish Rings
+-------
+![](/Colliard-Research.github.io/images/Rings.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
+The Rad One
+-------
+![](/Colliard-Research.github.io/images/CmW5-Cs-2.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" }
+
