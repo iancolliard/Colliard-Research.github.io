@@ -230,12 +230,8 @@ collections:
     output: true
     permalink: /:collection/:path/
   crystallography:
-    sections:
-    output: flase
-    chapters:
     output: true
-    permalink: /:collection/:path/
-
+    permalink: pretty
 
 # These settings control how pages and collections are included in the site
 defaults:
