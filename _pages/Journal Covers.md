@@ -8,12 +8,12 @@ author_profile: true
 {% include base_path %}
 
 ## Polyoxometalate ligands reveal different coordination chemistries among lanthanides and heavy actinides 
-[![Journal of the American Chemical Society (2024)](/Colliard-Research.github.io/images/IMG_0373.png)](/Colliard-Research.github.io/files/paper19.pdf)
+[![Journal of the American Chemical Society (2024)](/Colliard-Research.github.io/images/IMG_0373.png)](/Colliard-Research.github.io/files/paper18.pdf)
 
 ---
 
 ## Isolation and characterization of a Peacock-Weakley polyoxometalate containing a transplutonium element: the case of curium bis-pentatungstate [Cm(W5O18)2]9-
-[![Chemical Communications (2024)](/Colliard-Research.github.io/images/IMG_0371.png)](/Colliard-Research.github.io/files/paper18.pdf)
+[![Chemical Communications (2024)](/Colliard-Research.github.io/images/IMG_0371.png)](/Colliard-Research.github.io/files/paper19.pdf)
 
 ---
 
