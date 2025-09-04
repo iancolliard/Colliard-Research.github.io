@@ -278,12 +278,12 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
+  # _crystallography
   - scope:
-      path: ""
-      type: talks
+      path: "crystallography"
+      type: pages
     values:
-      layout: talk
+      layout: page
       author_profile: true
       share: true
 
