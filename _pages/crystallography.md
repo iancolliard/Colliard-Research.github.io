@@ -13,7 +13,3 @@ This method provides an unparalleled level of structural detail, allowing resear
 
 -------
 
-Favorite Structures!
---------
-bla blah blah
-
