@@ -13,17 +13,17 @@ Favorites!
 
 | Nickname | Quick Pic |
 |--------------------------------------------|--------------------------------------------|
-| Cluster of Cluster | ![](/Colliard-Research.github.io/cluster.png) |
+| Cluster of Cluster | ![](/Colliard-Research.github.io/cluster.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
-| Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png) |
+| Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
-| PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png) |
+| PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
-| The Rings | ![](/Colliard-Research.github.io/images/onering.png) |
+| The Rings | ![](/Colliard-Research.github.io/images/onering.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
-| Interlocking-ish Rings | ![](/Colliard-Research.github.io/images/Rings.png) |
+| Interlocking-ish Rings | ![](/Colliard-Research.github.io/images/Rings.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
-| The Rad One | ![](/Colliard-Research.github.io/images/CmW5-Cs-2.png) |
+| The Rad One | ![](/Colliard-Research.github.io/images/CmW5-Cs-2.png){: style="width:250px; height:auto;" } |
 
 ---------
 
