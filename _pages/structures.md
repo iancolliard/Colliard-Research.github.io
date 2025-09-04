@@ -3,8 +3,17 @@ layout: archive
 title: Record Holders & Milestones
 permalink: /structures/
 author_profile: true
-
 ---
+
+{% include base_path %}
+
+<ul>
+{% for p in site.pages %}
+  {% if p.url contains "/crystallography/" %}
+    <li>{{ p.path }} → <code>{{ p.url }}</code></li>
+  {% endif %}
+{% endfor %}
+</ul>
 
 Automatically generated from the `_crystallography` collection.
 
