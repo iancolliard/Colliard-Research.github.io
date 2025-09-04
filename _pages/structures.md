@@ -13,18 +13,19 @@ Favorites!
 
 | Nickname | Quick Pic |
 |--------------------------------------------|--------------------------------------------|
-| Cluster of Cluster | ![](/Colliard-Research.github.io/U84-poly.png) |
+| Cluster of Cluster | ![](/Colliard-Research.github.io/cluster.png) |
 |--------------------------------------------|--------------------------------------------|
-| Sandwhich | ![](/Colliard-Research.github.io/images/U60U70Mn-one-2.png) |
+| Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png) |
 |--------------------------------------------|--------------------------------------------|
 | PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png) |
 |--------------------------------------------|--------------------------------------------|
-| The Rings | ![](/Colliard-Research.github.io/images/U70-poly.png) |
+| The Rings | ![](/Colliard-Research.github.io/images/onering.png) |
 |--------------------------------------------|--------------------------------------------|
 | Interlocking-ish Rings | ![](/Colliard-Research.github.io/images/Rings.png) |
 |--------------------------------------------|--------------------------------------------|
 | The Rad One | ![](/Colliard-Research.github.io/images/CmW5-Cs-2.png) |
 
+---------
 
 Record Holders
 ================
@@ -129,6 +130,7 @@ Cubic
 - **Pn-3** — 1 structure(s)
 
 -----
+
 Overview of space groups observed in my dataset, grouped by year.
 ================
 
