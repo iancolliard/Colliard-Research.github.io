@@ -17,13 +17,13 @@ Favorites!
 |--------------------------------------------|--------------------------------------------|
 | Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
-| PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png){: style="width:250px; height:auto;" } |
+| PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
-| The Rings | ![](/Colliard-Research.github.io/images/onering.png){: style="width:250px; height:auto;" } |
+| The Rings | ![](/Colliard-Research.github.io/images/onering.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
-| Interlocking-ish Rings | ![](/Colliard-Research.github.io/images/Rings.png){: style="width:250px; height:auto;" } |
+| Interlocking-ish Rings | ![](/Colliard-Research.github.io/images/Rings.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
-| The Rad One | ![](/Colliard-Research.github.io/images/CmW5-Cs-2.png){: style="width:250px; height:auto;" } |
+| The Rad One | ![](/Colliard-Research.github.io/images/CmW5-Cs-2.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 
 ---------
 

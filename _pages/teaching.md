@@ -10,7 +10,7 @@ author_profile: true
 
 Graduate School Ambassador, Oregon State University (2018–2022)
 ------
-As a Graduate School Ambassador, I represented Oregon State University to prospective students and helped guide new recruits through the transition to graduate life. This role combined mentorship, outreach, and communication, as I connected with students from diverse backgrounds, shared my experiences as a researcher, and supported the university’s efforts to build an inclusive and welcoming graduate community.
+As a Graduate School Ambassador, I represented Oregon State University to prospective students and helped guide new recruits through the transition to graduate life. This role combined mentorship, outreach, and communication, as I connected with students from diverse backgrounds, shared my experiences as a researcher, and supported the university’s efforts to build an inclusive and welcoming graduate community. Actively participated in recruitment and raising funds for networking conferences and outreach.
 
 ***
 

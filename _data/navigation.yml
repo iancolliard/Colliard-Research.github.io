@@ -29,5 +29,5 @@ main:
   - title: "Crystal Structures"
     url: /structures/
     
-  - title: "Press & News "
-    url: /press/
+# - title: "Press & News "
+#    url: /press/
