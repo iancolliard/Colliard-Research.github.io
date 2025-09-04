@@ -13,9 +13,9 @@ Favorites!
 
 | Nickname | Quick Pic |
 |--------------------------------------------|--------------------------------------------|
-| Cluster of Cluster | ![](/Colliard-Research.github.io/clusters.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
+| Cluster of Cluster | ![](/Colliard-Research.github.io/images/clusters.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
-| Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png){: style="width:250px; height:auto;" } |
+| Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
 | PacMan | ![](/Colliard-Research.github.io/images/NiCe70-PacMan.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
