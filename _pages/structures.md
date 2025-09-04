@@ -13,7 +13,7 @@ Favorites!
 
 | Nickname | Quick Pic |
 |--------------------------------------------|--------------------------------------------|
-| Cluster of Cluster | ![](/Colliard-Research.github.io/cluster.png){: style="width:250px; height:auto;" } |
+| Cluster of Cluster | ![](/Colliard-Research.github.io/cluster.png){: style="display:block; margin-left:auto; margin-right:auto; width:250px;" } |
 |--------------------------------------------|--------------------------------------------|
 | Sandwhich | ![](/Colliard-Research.github.io/images/sandwich.png){: style="width:250px; height:auto;" } |
 |--------------------------------------------|--------------------------------------------|
