@@ -231,7 +231,7 @@ collections:
     permalink: /:collection/:path/
   crystallography:
     output: true
-    permalink: /:collection/:path/
+    permalink: /crystallography/:name/
 
 # These settings control how pages and collections are included in the site
 defaults:
